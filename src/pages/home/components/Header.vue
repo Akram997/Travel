@@ -1,60 +1,67 @@
 <template>
   <div class="header">
     <div class="header-left">
-      <div class="iconfont back-icon">&#xe624;</div>
+      <div class="el-icon-arrow-left back-icon"></div>
     </div>
     <div class="header-input">
-      <span class="iconfont">&#xe632;</span>
+      <span class="el-icon-search"></span>
       输入城市/景点/游玩主题
     </div>
-    <div class="header-right">
-      城市
-      <span class="iconfont arrow-icon">&#xe6aa;</span>
-    </div>
+    <router-link to="/City">
+      <div class="header-right">
+        {{ this.$store.state.city }}
+        <span class="el-icon-caret-bottom arrow-icon"></span>
+      </div>
+    </router-link>
   </div>
 </template>
 
 <script>
 export default {
-  name: "HomeHeader",
+  name: "HomeHeader"
 };
 </script>
 
 <style scoped>
 .header {
   display: flex;
-  line-height: 0.86rem;
+  line-height: 0.8rem;
   background: #00bcd4;
   color: #fff;
 }
 .header .header-left {
   width: 0.64rem;
   float: left;
+  margin-top: 0.15rem;
+  font-size: .6rem;
+  padding-left: .05rem;
 }
-.header .header-left .back-icon{
+.header .header-left .back-icon {
   text-align: center;
-  font-size: .4rem;
+  font-size: 0.55rem;
 }
 .header .header-input {
   flex: 1;
   background: #fff;
   border-radius: 0.1rem;
-  margin-top: 0.12rem;
+  margin-top: 0.2rem;
   height: 0.64rem;
   margin-left: 0.2rem;
   color: #ccc;
   line-height: 0.64rem;
   font-size: 13px;
-  padding-left: .2rem;
+  padding-left: 0.2rem;
 }
 .header .header-right {
-  width: 1.24rem;
+  min-width: 1.04rem;
+  padding: 0.1rem;
   float: right;
   text-align: center;
+  color: #fff;
 }
-.header .header-right .arrow-icon{
-  margin-left: .1rem;
-  font-size: .24rem;
+.header .header-right .arrow-icon {
+  margin-left: 0.1rem;
+  font-size: 0.24rem;
 }
 </style>
 
